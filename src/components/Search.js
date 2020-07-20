@@ -1,9 +1,7 @@
 import React from "react";
 
 class Search extends React.Component {
-  onInputChange(e) {
-    console.log(e.target.value);
-  }
+  state = { term: "" };
 
   render() {
     return (
@@ -11,7 +9,10 @@ class Search extends React.Component {
         <form className="ui form">
           <div className="field">
             <label style={{ fontSize: "1.5rem" }}>Photo Search</label>
-            <input type="text" onChange={this.onInputChange} />
+            <input
+              type="text"
+              onChange={(e) => this.setState({ term: e.target.value })}
+            />
           </div>
         </form>
       </div>
